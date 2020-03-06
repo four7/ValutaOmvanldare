@@ -4,8 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+<div class="container">
+    <h1 class="display-4 center" style="position:relative;bottom:200px;">Currency Converter</h1>
+    <br>
+    <div class="currency">
+            <div class="rates" id="rate"></div>
+            
+        <select id="fromCurrency" style="position:relative;right:255px;">
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CZK">CZK</option>
+            <option value="DKK">DKK</option>
+            <option value="EUR">EUR</option>
+            <option value="FJD">FJD</option>
+            <option value="GBP">GBP</option>
+            <option value="HKD">HKD</option>
+            <option value="JPY">JPY</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PHP">PHP</option>
+            <option value="PLN">PLN</option>
+            <option value="SEK" selected>SEK</option>
+            <option value="SGD">SGD</option>
+            <option value="UAH">UAH</option>
+            <option value="USD">USD</option>
+            <option value="UYU">UYU</option>
+            <option value="VND">VND</option>
+            <option value="ZAR">ZAR</option>
+            </select>
+            <input type="number" id="fromAmount" placeholder="0" value=1 style="position:relative;right:253px;" />
+        </div>
+        <div class="top">
+            <button id="convert">
+            <i class="fas fa-exchange-alt"></i>
+            </button>
+            
+        </div>
+        <div class="currency2">
+            <select id="toCurrency">
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="EUR">EUR</option>
+                <option value="FJD">FJD</option>
+                <option value="GBP">GBP</option>
+                <option value="HKD">HKD</option>
+                <option value="JPY">JPY</option>
+                <option value="NOK">NOK</option>
+                <option value="NZD">NZD</option>
+                <option value="PHP">PHP</option>
+                <option value="PLN">PLN</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="UAH">UAH</option>
+                <option value="USD" selected>USD</option>
+                <option value="UYU">UYU</option>
+                <option value="VND">VND</option>
+                <option value="ZAR">ZAR</option>
+            </select>
+            <input type="number" id="toAmount" placeholder="0" readonly />
+        </div>
+    </div>
+</div> 
+
+
+    <script src="valutor.js"></script>
+    <!-- <script src="test.js"></script> -->
 </body>
 </html>
