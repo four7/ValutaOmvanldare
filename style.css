@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
 	box-sizing: border-box;
 }
 body {
 	background-color: #9e91eb;
-	font-family: 'Muli', sans-serif;
+	font-family: 'Montserrat', 'Muli', sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

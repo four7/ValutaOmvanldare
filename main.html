@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css'>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.css">
 </head>
 <body>
 <div class="container">
     <h1 class="display-4 center" style="position:relative;bottom:200px;">Currency Converter</h1>
     <br>
-    <div class="currency">
+    <div class="currency z-depth-4 card-panel">
             <div class="rates" id="rate"></div>
             
         <select id="fromCurrency" style="position:relative;right:255px;">
@@ -46,7 +48,7 @@
             <option value="SGD">SGD</option>
             <option value="THB">THB</option>
             <option value="TRY">TRY</option>
-            <option value="USD">USD</option>
+            <option value="USD"><span class="flag-icon flag-icon-gr flag-icon-squared"></span>USD</option>
             <option value="ZAR">ZAR</option>
             </select>
             <input type="number" id="fromAmount" placeholder="0" value=1 style="position:relative;right:253px;" />
