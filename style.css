@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+/* 
 * {
 	box-sizing: border-box;
-}
+} */
 body {
-	background-color: #9e91eb;
+	background-color: rgb(42, 42, 66);
 	font-family: 'Montserrat', 'Muli', sans-serif;
 	display: flex;
 	flex-direction: column;
@@ -70,7 +70,7 @@ body {
 	border: 0;
 	background: transparent;
 	font-size: 22px;
-	text-align: right;
+    text-align: right;
 }
 .top {
 	color: #f59300;
@@ -94,7 +94,7 @@ body {
     transform: rotate(90deg);
     position:relative;
     bottom:13px;
-    left:180px;
+    left:220px;
 }
 .top button:active {
 	transform: rotate(90deg) scale(0.9);
@@ -127,5 +127,8 @@ select:focus, input:focus, button:focus {
     margin: 30px 15px 30px 25px; 
     position: relative;
     bottom:50px; 
-    left:50px;
+    left:90px;
 }
+.dd-selected,.dd-option,.dd-option-selected{
+    background-color: #9e91eb;
+    }
