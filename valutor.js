@@ -83,8 +83,6 @@ async function getData() {
             toAmount.value = (fromAmount.value * rate).toFixed(2);
             localStorage.setItem(allRates, JSON.stringify(rate2));
 
-            // console.log(currentTime);
-
             var radios = document.getElementsByClassName("valutan");
             for (var x = 0; x < radios.length; x++)
             {
@@ -113,11 +111,38 @@ async function getData() {
         
         var store = radios[`${select_value}`].attributes[4].value;
 
-        diffRates.innerText = `1 ${from_Currency} = ${store} ${to_Currency}`
-        toAmount.value = (fromAmount.value * store).toFixed(2); 
-        console.log(`Hämtade lagrad data`);
-        let remainingMinutes = (localStorage.getItem("expireTime") - Date.now()) / 60000;
-        console.log(`Tid till nästa update: ${remainingMinutes.toFixed(0)} minuter`);
+        if(store == "")
+        {
+            await fetch(`https://api.exchangerate-api.com/v4/latest/${to_Currency}`)
+            .then(response => response.json())
+            .then(res => {
+            rate = res.rates[from_Currency];
+            rate2 = res.rates[from_Currency];
+            diffRates.innerText = `1 ${to_Currency} = ${rate} ${from_Currency}`;
+            fromAmount.value = (toAmount.value * rate).toFixed(2);
+            localStorage.setItem(allRates, JSON.stringify(rate2));
+
+            var radios = document.getElementsByClassName("valutan");
+            for (var x = 0; x < radios.length; x++)
+            {
+                if(radios[x].attributes[2].value == select_value)
+                {
+                    radios[`${select_value}`].attributes[4].value = rate2;
+                }
+            }
+            
+            localStorage.setItem(apiCall, JSON.stringify(rate));
+            console.log("hämtade från API");
+        });
+        }
+        else
+        {
+            diffRates.innerText = `1 ${from_Currency} = ${store} ${to_Currency}`;
+            toAmount.value = (fromAmount.value * store).toFixed(2); 
+            console.log(`Hämtade lagrad data`);
+            let remainingMinutes = (localStorage.getItem("expireTime") - Date.now()) / 60000;
+            console.log(`Tid till nästa update: ${remainingMinutes.toFixed(0)} minuter`);   
+        }
     }
     
 }
